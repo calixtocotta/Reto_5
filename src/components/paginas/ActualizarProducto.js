@@ -49,9 +49,8 @@ const ActualizarProducto = () => {
     const formik = useFormik({
         initialValues: {
             reference: "",
-            brand: "",
             category: "",
-            presentation: "",
+            size: "",
             description: "",
             availability: null,
             price: "",
@@ -62,21 +61,17 @@ const ActualizarProducto = () => {
             reference: Yup.string()
                     .min(3, 'Debes agregar una referencia')
                     .required('La referencia es obligatoria'),
-            brand: Yup.string()
-                    .min(3, 'Debes agregar una marca')
-                    .required('la marca es obligatoria'),
             category: Yup.string()
                     .min(3,'Debes agregar una categoria')
                     .required('la categoria es obligatoria'), 
-                    presentation: Yup.string()
-                    .min(3, 'Debes agregar una presentacion')
-                    .required('La presentacion es obligatoria'),
+            size: Yup.string()
+                    .min(3, 'Debes agregar una talla')
+                    .required('La talla es obligatoria'),
             description: Yup.string()
-                    .min(3, 'Debes agregar una presentacion')
-                    .required('La presentacion es obligatoria'),
-
+                    .min(3, 'Debes agregar una descripción')
+                    .required('La descripción es obligatoria'),
             availability: Yup.boolean()
-                    .required(''),
+                    .required('Disponibilidad'),
             price: Yup.number()
                     .min(3, 'Debes agregar el precio')
                     .required('El precio es obligatorio'),
@@ -112,7 +107,7 @@ const ActualizarProducto = () => {
     
     return( 
         <>
-           <h1 className="text-3xl font-light mb-4">Actualizar Productos</h1>
+           <h1 className="text-3xl font-light mb-4">Actualizar vestidos</h1>
 
            <div className="flex justify-center mt-10">
                 <div className="w-full max-w-3xl">
@@ -121,13 +116,14 @@ const ActualizarProducto = () => {
                     >
                       
                         <div className="mb-4">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">brand</label>
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">Referencia</label>
                             <input 
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="brand"
+                                id="reference"
                                 type="text"
-                                placeholder="brand " 
-                                value={productosActualizar.brand}
+                                placeholder="referencia" 
+                                disabled="disabled"
+                                value={productosActualizar.reference}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}   
                             />
@@ -150,13 +146,13 @@ const ActualizarProducto = () => {
                  
 
                         <div className="mb-4">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">PRESENTACION</label>
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">TALLA</label>
                             <input 
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="presentation"
+                                id="size"
                                 type="text"
-                                placeholder="Presentacion"
-                                value={productosActualizar.presentation}
+                                placeholder="Talla"
+                                value={productosActualizar.size}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}    
                             />

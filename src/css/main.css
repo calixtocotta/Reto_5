@@ -20,14 +20,18 @@ html {
  * Remove the margin in all browsers.
  */
 
-body {
+ body{
   margin: 0px;
-    padding: 0px;
-    font-family: sans-serif;
-    color: rgb(61, 61, 61);
-    min-height: 100vh;
-    max-width: 120vw;
+  padding: 0px;
+  font-family: sans-serif;
+  color: rgb(61, 61, 61);
+  min-height: 100vh;
+  max-width: 120vw;
   background-image: linear-gradient(90deg, rgba(50,232,199,1) 0%, rgba(0,172,255,1) 100%);
+  
+}
+body * {
+  transition: all 0.15s linear;
 }
 
 /**

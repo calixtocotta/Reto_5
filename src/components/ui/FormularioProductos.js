@@ -97,11 +97,12 @@ const actualizarProducto = reference =>{
                         <button
                             onClick={ () => borrarProducto(producto.reference)}
                             type="submit"
-                            className="bg-gray-800 hover:bg-gray-900 w-full mt-5 p-2 text-white uppercase font-bold"
+                            className="  bg-blue-800 hover:bg-blue-700, inline-block mb-5 p-2 text-white uppercase font-bold"
                            > 
                            Borrar
                            
                            </button>
+                           <br></br>
                           
                             <Link to={`/actualizar-producto/${producto.reference}`} className="  bg-blue-800 hover:bg-blue-700, inline-block mb-5 p-2 text-white uppercase font-bold">
                                 Actualizar Producto
